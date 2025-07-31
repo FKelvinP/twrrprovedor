@@ -1,0 +1,130 @@
+@tailwind base;
+
+:root {
+  /* Logo and Header proportional sizing */
+  --logo-size: 5rem; /* 20 = h-20 */
+  --header-height: calc(var(--logo-size) + 1rem); /* Logo size + padding */
+}
+
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Tech Web color palette - azul escuro, lilás/roxo e vermelho */
+    --background: 215 28% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 25% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 25% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 252 100% 65%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 220 25% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 25% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 0 84% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 25% 15%;
+    --input: 220 25% 12%;
+    --ring: 252 100% 65%;
+
+    /* Custom Tech Web variables */
+    --tech-blue: 213 94% 68%;
+    --tech-purple: 252 100% 65%;
+    --tech-red: 0 84% 60%;
+    --tech-dark: 215 28% 7%;
+    --tech-card: 220 25% 9%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--tech-blue)), hsl(var(--tech-purple)));
+    --gradient-tech: linear-gradient(145deg, hsl(var(--tech-dark)), hsl(var(--tech-card)));
+    --gradient-accent: linear-gradient(90deg, hsl(var(--tech-purple)), hsl(var(--tech-red)));
+    
+    /* Shadows */
+    --shadow-tech: 0 10px 30px -10px hsl(var(--tech-purple) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--tech-blue) / 0.4);
+    
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode mantém o mesmo esquema */
+    --background: 215 28% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 25% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 25% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 252 100% 65%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 220 25% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 25% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 0 84% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 25% 15%;
+    --input: 220 25% 12%;
+    --ring: 252 100% 65%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
