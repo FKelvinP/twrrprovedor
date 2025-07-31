@@ -8,6 +8,7 @@ This is a full-stack web application for TechWeb, an internet service provider (
 
 Preferred communication style: Simple, everyday language.
 Preferred language: Portuguese (Brazilian)
+Visual preferences: Authentic app colors and icons for social media integration
 
 ## System Architecture
 
@@ -113,3 +114,23 @@ Preferred language: Portuguese (Brazilian)
 - **Static Assets**: Served through Express in production
 
 The application follows modern web development practices with a clear separation of concerns, type safety throughout the stack, and a responsive design optimized for the Brazilian internet service provider market.
+
+## Recent Changes (January 31, 2025)
+
+### Social Media Integration Improvements
+- **Authentic App Icons**: Integrated react-icons library for official social media icons
+  - WhatsApp: FaWhatsapp with official green color (#25D366)
+  - Instagram: FaInstagram with authentic gradient (purple/pink/red)
+  - Gmail: SiGmail with official red color
+  - Google Maps: SiGooglemaps with official blue color
+
+### UI/UX Enhancements
+- **Floating Buttons Position**: Adjusted floating social media buttons to bottom-24 to prevent footer overlap
+- **Footer Layout**: Added lateral padding (px-20) to copyright and menu items for mobile compatibility
+- **Contact Section**: Enhanced with proper Google Maps and agenda icons for address and business hours
+- **Button Variants**: Updated button styles with authentic app colors and gradients
+
+### Technical Updates
+- **Dependencies**: Added react-icons package for comprehensive icon library
+- **Component Updates**: Updated WhatsAppButton, InstagramButton, ContactSection, and Footer components
+- **Styling**: Improved gradient implementation for Instagram branding
