@@ -61,6 +61,21 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // TechWeb custom colors
+        "tech-blue": "hsl(var(--tech-blue))",
+        "tech-purple": "hsl(var(--tech-purple))",
+        "tech-red": "hsl(var(--tech-red))",
+        "tech-dark": "hsl(var(--tech-dark))",
+        "tech-card": "hsl(var(--tech-card))",
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-tech': 'var(--gradient-tech)',
+        'gradient-accent': 'var(--gradient-accent)',
+      },
+      boxShadow: {
+        'tech': 'var(--shadow-tech)',
+        'glow': 'var(--shadow-glow)',
       },
       keyframes: {
         "accordion-down": {
