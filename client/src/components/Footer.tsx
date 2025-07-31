@@ -1,4 +1,6 @@
-import { MessageCircle, Phone, Mail, MapPin, Instagram } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import logoTechWeb from "@/assets/logo-techweb-main.png";
 import logoTW from "@/assets/logo-tw.png";
@@ -51,15 +53,15 @@ const Footer = () => {
                 size="sm"
                 onClick={() => window.open("https://wa.me/559591691553", "_blank")}
               >
-                <MessageCircle className="w-4 h-4" />
+                <FaWhatsapp className="w-4 h-4" />
                 WhatsApp
               </Button>
               <Button 
-                variant="outline" 
+                variant="instagram" 
                 size="sm"
                 onClick={() => window.open("https://instagram.com/techwebrr", "_blank")}
               >
-                <Instagram className="w-4 h-4" />
+                <FaInstagram className="w-4 h-4" />
                 Instagram
               </Button>
             </div>
@@ -76,7 +78,7 @@ const Footer = () => {
                 <span className="text-muted-foreground">(95) 9169-1553</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-tech-purple" />
+                <SiGmail className="w-4 h-4 text-red-400" />
                 <span className="text-muted-foreground text-sm">
                   provedortechwebrr@gmail.com
                 </span>
@@ -127,12 +129,12 @@ const Footer = () => {
         <div className="border-t border-tech-purple/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
-            <p className="text-muted-foreground text-sm text-center md:text-left">
+            <p className="text-muted-foreground text-sm text-center md:text-left px-20 md:px-0">
               © 2025 TechWeb - Internet Fibra Óptica. Todos os direitos reservados.
             </p>
 
             {/* Links Rápidos */}
-            <div className="flex space-x-6 text-sm">
+            <div className="flex space-x-6 text-sm px-20 md:px-0">
               <button 
                 onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })}
                 className="text-muted-foreground hover:text-tech-purple transition-colors"

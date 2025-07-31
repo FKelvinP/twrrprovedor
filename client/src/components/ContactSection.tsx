@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
-  MessageCircle, 
   Phone, 
-  Mail, 
   MapPin, 
-  Instagram,
   Clock
 } from "lucide-react";
+import { FaWhatsapp, FaInstagram, FaGooglePlay } from "react-icons/fa";
+import { SiGmail, SiGooglemaps } from "react-icons/si";
 
 const ContactSection = () => {
   return (
@@ -44,7 +43,7 @@ const ContactSection = () => {
                 className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-background"
                 onClick={() => window.open("https://wa.me/559591691553", "_blank")}
               >
-                <MessageCircle className="w-6 h-6" />
+                <FaWhatsapp className="w-6 h-6" />
                 Conversar no WhatsApp
               </Button>
             </CardContent>
@@ -56,7 +55,7 @@ const ContactSection = () => {
             <Card className="bg-tech-card border-tech-purple/20 hover:border-tech-purple/50 transition-all duration-300 hover:shadow-tech">
               <CardHeader className="text-center">
                 <div className="w-16 h-16 mx-auto rounded-full bg-green-500/20 border border-green-500/30 flex items-center justify-center mb-4">
-                  <MessageCircle className="w-8 h-8 text-green-400" />
+                  <FaWhatsapp className="w-8 h-8 text-green-400" />
                 </div>
                 <CardTitle className="text-xl text-foreground">WhatsApp</CardTitle>
               </CardHeader>
@@ -78,10 +77,10 @@ const ContactSection = () => {
             {/* E-mail */}
             <Card className="bg-tech-card border-tech-purple/20 hover:border-tech-purple/50 transition-all duration-300 hover:shadow-tech">
               <CardHeader className="text-center">
-                <div className="w-16 h-16 mx-auto rounded-full bg-tech-blue/20 border border-tech-blue/30 flex items-center justify-center mb-4">
-                  <Mail className="w-8 h-8 text-tech-blue" />
+                <div className="w-16 h-16 mx-auto rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center mb-4">
+                  <SiGmail className="w-8 h-8 text-red-400" />
                 </div>
-                <CardTitle className="text-xl text-foreground">E-mail</CardTitle>
+                <CardTitle className="text-xl text-foreground">Gmail</CardTitle>
               </CardHeader>
               <CardContent className="text-center space-y-4">
                 <p className="text-tech-blue font-semibold break-all">
@@ -103,8 +102,8 @@ const ContactSection = () => {
             {/* Instagram */}
             <Card className="bg-tech-card border-tech-purple/20 hover:border-tech-purple/50 transition-all duration-300 hover:shadow-tech">
               <CardHeader className="text-center">
-                <div className="w-16 h-16 mx-auto rounded-full bg-pink-500/20 border border-pink-500/30 flex items-center justify-center mb-4">
-                  <Instagram className="w-8 h-8 text-pink-400" />
+                <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-red-500/20 border border-pink-500/30 flex items-center justify-center mb-4">
+                  <FaInstagram className="w-8 h-8 text-pink-400" />
                 </div>
                 <CardTitle className="text-xl text-foreground">Instagram</CardTitle>
               </CardHeader>
