@@ -67,6 +67,9 @@ export default {
         "tech-red": "hsl(var(--tech-red))",
         "tech-dark": "hsl(var(--tech-dark))",
         "tech-card": "hsl(var(--tech-card))",
+        // Social media colors
+        "whatsapp": "#25D366",
+        "instagram": "#E4405F",
       },
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',

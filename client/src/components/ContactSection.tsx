@@ -66,7 +66,7 @@ const ContactSection = () => {
                   Atendimento rápido e humanizado
                 </p>
                 <Button 
-                  variant="outline" 
+                  variant="whatsapp" 
                   className="w-full"
                   onClick={() => window.open("https://wa.me/559591691553", "_blank")}
                 >
@@ -114,7 +114,7 @@ const ContactSection = () => {
                   Novidades e promoções
                 </p>
                 <Button 
-                  variant="outline" 
+                  variant="instagram" 
                   className="w-full"
                   onClick={() => window.open("https://instagram.com/techwebrr", "_blank")}
                 >
