@@ -1,28 +1,30 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Router, Route, Switch } from "wouter";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import "./App.css";
+import React from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Plans from './components/Plans';
+import Benefits from './components/Benefits';
+import Features from './components/Features';
+import ServiceAreas from './components/ServiceAreas';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <Router>
-        <Switch>
-          <Route path="/" component={Index} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+function App() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <Header />
+      <main>
+        <Hero />
+        <Plans />
+        <Benefits />
+        <Features />
+        <ServiceAreas />
+        <Contact />
+      </main>
+      <Footer />
+      <FloatingWhatsApp />
+    </div>
+  );
+}
 
 export default App;
