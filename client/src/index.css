@@ -1,130 +1,185 @@
 @tailwind base;
-
-:root {
-  /* Logo and Header proportional sizing */
-  --logo-size: 5rem; /* 20 = h-20 */
-  --header-height: calc(var(--logo-size) + 1rem); /* Logo size + padding */
-}
-
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-@layer base {
-  :root {
-    /* Tech Web color palette - azul escuro, lilás/roxo e vermelho */
-    --background: 215 28% 7%;
-    --foreground: 210 40% 98%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    --card: 220 25% 9%;
-    --card-foreground: 210 40% 98%;
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 50%, #2d1b69 100%);
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-    --popover: 220 25% 9%;
-    --popover-foreground: 210 40% 98%;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
 
-    --primary: 252 100% 65%;
-    --primary-foreground: 210 40% 98%;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-    --secondary: 220 25% 12%;
-    --secondary-foreground: 210 40% 98%;
+::-webkit-scrollbar-track {
+  background: rgba(15, 15, 35, 0.5);
+}
 
-    --muted: 220 25% 12%;
-    --muted-foreground: 215 20.2% 65.1%;
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #6366f1, #8b5cf6);
+  border-radius: 4px;
+}
 
-    --accent: 0 84% 60%;
-    --accent-foreground: 210 40% 98%;
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #8b5cf6, #d946ef);
+}
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+/* Selection color */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+}
 
-    --border: 220 25% 15%;
-    --input: 220 25% 12%;
-    --ring: 252 100% 65%;
+/* Focus styles */
+button:focus,
+input:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
 
-    /* Custom Tech Web variables */
-    --tech-blue: 213 94% 68%;
-    --tech-purple: 252 100% 65%;
-    --tech-red: 0 84% 60%;
-    --tech-dark: 215 28% 7%;
-    --tech-card: 220 25% 9%;
-    
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--tech-blue)), hsl(var(--tech-purple)));
-    --gradient-tech: linear-gradient(145deg, hsl(var(--tech-dark)), hsl(var(--tech-card)));
-    --gradient-accent: linear-gradient(90deg, hsl(var(--tech-purple)), hsl(var(--tech-red)));
-    
-    /* Shadows */
-    --shadow-tech: 0 10px 30px -10px hsl(var(--tech-purple) / 0.3);
-    --shadow-glow: 0 0 40px hsl(var(--tech-blue) / 0.4);
-    
-    --radius: 0.5rem;
+/* Loading animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    --sidebar-background: 0 0% 98%;
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
 
-    --sidebar-primary: 240 5.9% 10%;
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
 
-    --sidebar-primary-foreground: 0 0% 98%;
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-    --sidebar-accent: 240 4.8% 95.9%;
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(45deg, #6366f1, #8b5cf6, #d946ef);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+/* Button hover effects */
+.btn-hover-scale:hover {
+  transform: scale(1.05);
+}
 
-    --sidebar-border: 220 13% 91%;
+.btn-hover-glow:hover {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+/* Card hover effects */
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 2rem !important;
   }
-
-  .dark {
-    /* Dark mode mantém o mesmo esquema */
-    --background: 215 28% 7%;
-    --foreground: 210 40% 98%;
-
-    --card: 220 25% 9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 220 25% 9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 252 100% 65%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 220 25% 12%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 220 25% 12%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 0 84% 60%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 25% 15%;
-    --input: 220 25% 12%;
-    --ring: 252 100% 65%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  
+  .plans-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .header-content {
+    flex-direction: column !important;
+    gap: 1rem;
+  }
+  
+  .nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .nav-item {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+/* Print styles */
+@media print {
+  .header,
+  .whatsapp-btn,
+  .btn-primary,
+  .btn-secondary {
+    display: none !important;
   }
+}
 
+/* High contrast mode */
+@media (prefers-contrast: high) {
   body {
-    @apply bg-background text-foreground;
+    background: #000;
+    color: #fff;
   }
+  
+  .plan-card,
+  .feature-card,
+  .benefit-card,
+  .contact-card {
+    border: 2px solid #fff;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark theme variables */
+:root {
+  --bg-primary: #0f0f23;
+  --bg-secondary: #1a1a3a;
+  --bg-tertiary: #2d1b69;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --accent-primary: #6366f1;
+  --accent-secondary: #8b5cf6;
+  --accent-tertiary: #d946ef;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.05);
 }

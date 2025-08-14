@@ -1,28 +1,37 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Router, Route, Switch } from "wouter";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import "./App.css";
+import React, { useState } from 'react';
+import './App.css';
+import Header from './components/Header';
+import Home from './pages/Home';
+import Plans from './pages/Plans';
+import Benefits from './pages/Benefits';
+import Contact from './pages/Contact';
 
-const queryClient = new QueryClient();
+function App() {
+  const [currentPage, setCurrentPage] = useState('home');
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <Router>
-        <Switch>
-          <Route path="/" component={Index} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return <Home />;
+      case 'plans':
+        return <Plans />;
+      case 'benefits':
+        return <Benefits />;
+      case 'contact':
+        return <Contact />;
+      default:
+        return <Home />;
+    }
+  };
+
+  return (
+    <div className="App">
+      <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <main>
+        {renderPage()}
+      </main>
+    </div>
+  );
+}
 
 export default App;
